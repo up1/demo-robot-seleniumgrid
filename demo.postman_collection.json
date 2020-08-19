@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "5c8c86ae-ea25-4bc0-9511-b4ad6b736022",
+		"name": "demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://jsonplaceholder.cypress.io/todos/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd9c997d-dbc9-4851-aef8-41b4f2e06fe2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userId).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.cypress.io/todos/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"cypress",
+						"io"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
